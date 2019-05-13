@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './components/Form';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,26 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <label htmlFor="name">Nombre:</label>
-          <input
-          id="name"
-          type="text"
-          value={this.state.name}
-          onChange={this.changeName}
-          />
-          <label htmlFor="description">Sinopsis:</label>
-          <textarea
-          id="description"
-          value={this.state.description}
-          onChange={this.changeDescription}
-          />
-          <select value={this.state.language} onChange={this.changeLanguage}>
-            <option value="Español">Español</option>
-            <option value="Inglés">Inglés</option>
-            <option value="Portugués">Portugués</option>
-          </select>
-        </form>
+        <Form name={this.state.name} changeName={this.changeName} description={this.state.description} changeDescription={this.changeDescription} language={this.state.language} changeLanguage={this.changeLanguage} />
         <div>
           <h1 onChange={this.changeName}>{this.state.name}</h1>
           <h2 onChange={this.changeDescription}>{this.state.description}</h2>
